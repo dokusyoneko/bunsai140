@@ -15,3 +15,24 @@ use App\Http\Controllers\NovelController;
 */
 
 Route::get('/novel', [NovelController::class, 'index']);
+
+
+// 執筆を始める
+Route::get('/novel_create', function () {
+    return view('novel_create');
+});
+
+// 書斎
+Route::get('/mypage', function () {
+    return view('mypage');
+});
+
+// お知らせ
+Route::get('/news', function () {
+    return view('news');
+});
+
+// 入室（ログイン）
+Route::get('/login', function () {
+    return view('login');
+});
