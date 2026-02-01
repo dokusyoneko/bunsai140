@@ -13,8 +13,9 @@
     <header class="header">
         <img src="{{ asset('headerlogo.png') }}" class="logo" alt="ヘッダーロゴ画像">
         <nav class="nav">
-            <div id="menu__button">目録</div>
-            <img src="{{ asset('nav.png') }}" class="nav__img" alt="menu画像">
+            <div id="menu__button" class="menu-trigger">
+                <img src="{{ asset('nav.png') }}" class="nav__img" alt="menu画像">
+            </div>
         </nav>
     </header>
 
@@ -61,18 +62,40 @@
     </main>
 
     <div id="menu-overlay" class="menu-overlay hidden">
-
         <div class="menu-box">
-            <img src="{{ asset('headerlogo.png') }}" class="menu-logo" alt="文彩ロゴ">
-
-            <img src="{{ asset('nav.png') }}" class="menu-close" id="menu-close">
+            <img src="{{ asset('icon0.png') }}" class="menu-close" id="menu-close">
 
             <ul class="menu-list">
-                <li>作品一覧</li>
-                <li>執筆を始める</li>
-                <li>書斎</li>
-                <li>お知らせ</li>
-                <li>入室</li>
+                <li>
+                    <a href="/novel">
+                        <img src="icon1.png">
+                        作品一覧
+                    </a>
+                </li>
+                <li>
+                    <a href="/create">
+                        <img src="icon2.png">
+                        執筆を始める
+                    </a>    
+                </li>
+                <li>
+                    <a href="/mypage">
+                        <img src="icon3.png">
+                        書斎
+                    </a>
+                </li>
+                <li>
+                    <a href="/news">
+                        <img src="icon4.png">
+                        お知らせ
+                    </a>
+                </li>
+                <li>
+                    <a href="/login">
+                        <img src="icon5.png">
+                        入室
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -92,6 +115,7 @@
             menuOverlay.classList.remove('active');
             menuOverlay.classList.add('hidden');
         });
+
     </script>
 
 </body>
