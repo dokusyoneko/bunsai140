@@ -1,0 +1,153 @@
+/* ===========================
+   全体
+=========================== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+    background-color: #fafafa;
+    overflow-x: hidden;
+    background-color: rgb(252, 245, 236);
+}
+
+/* ===========================
+   背景（固定）
+=========================== */
+.bg-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 450px;
+    background:
+        url('../Haikei1.png') no-repeat;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-right {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 450px;
+    width: 450px;
+    background: url('../Haikei2.png') no-repeat;
+    background-size: contain;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ===========================
+   ヘッダー
+=========================== */
+.header {
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0px;
+}
+
+.logo {
+    width: 150px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+#menu__button {
+    font-size: 25px;
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.menu-trigger {
+    cursor: pointer;
+}
+
+.nav__img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ===========================
+   目録メニュー（オーバーレイ）
+=========================== */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    background-color: rgba(252, 245, 236, 0.95);
+}
+
+.menu-overlay.active {
+    pointer-events: auto;
+}
+
+.menu-box {
+    width: 400px;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    pointer-events: auto;
+    font-weight: bold;
+    color: #aaa59f;
+    background-color: rgba(252, 245, 236, 0);
+}
+
+.menu-logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.menu-list li {
+    font-size: 22px;
+    margin: 20px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 非表示 */
+.hidden {
+    display: none;
+}

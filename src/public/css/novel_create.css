@@ -1,3 +1,76 @@
-.a {
-    color: rgb(38, 255, 0);
+/* 全体の余白調整 */
+.main__content__inner {
+    width: 40%;
+    margin: 40px auto;
+}
+
+/* 文字数カウンター */
+.char-count {
+    text-align: right;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* テキストエリア */
+.textarea__novel {
+    width: 100%;
+    height: 260px;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 1.8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    resize: none;
+    outline: none;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* placeholder（画像の雰囲気に合わせて淡く） */
+.textarea__novel::placeholder {
+    color: #b8b8b8;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ボタン配置（左右に並べる） */
+.novel-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* ボタン共通 */
+.novel_storage,
+.novel_post {
+    width: 48%;
+    padding: 12px 0;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+/* 筆を休める（左） */
+.novel_storage {
+    background: #e8e8e8;
+    color: #555;
+}
+
+/* 投稿する（右） */
+.novel_post {
+    background-color: black;
+    color: white;
+}
+
+/* ホバー */
+.novel_storage:hover {
+    background: #dcdcdc;
+}
+
+.novel_post:hover {
+    background: #c7a77d;
 }

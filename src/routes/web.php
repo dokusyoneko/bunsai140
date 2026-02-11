@@ -22,6 +22,11 @@ Route::get('/novel_create', function () {
     return view('novel_create');
 });
 
+Route::get('/novel_create/thanks', function () {
+    return view('thanks');
+});
+
+
 // 書斎
 Route::get('/mypage', function () {
     return view('mypage');
@@ -36,3 +41,4 @@ Route::get('/news', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
