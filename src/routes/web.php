@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NovelController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MypageController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +20,11 @@ use App\Http\Controllers\NovelController;
 
 Route::get('/novel', [NovelController::class, 'index']);
 
+Route::middleware('auth')->group(function () {
+Route::post('/novels/{novel}/like', [LikeController::class, 'toggle'])
+    ->name('novels.like');
+});
+
 
 // 執筆を始める
 Route::get('/novel_create', function () {
@@ -28,17 +37,15 @@ Route::get('/novel_create/thanks', function () {
 
 
 // 書斎
-Route::get('/mypage', function () {
-    return view('mypage');
-});
+Route::get('/mypage', [MypageController::class, 'index'])
+    ->middleware('auth');
 
 // お知らせ
 Route::get('/news', function () {
     return view('news');
 });
 
-// 入室（ログイン）
-Route::get('/login', function () {
-    return view('login');
+Route::get('/', function () {
+    return redirect('/novel');
 });
 

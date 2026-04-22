@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>140字小説 文彩</title>
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     @yield('css')
@@ -55,12 +56,25 @@
                         お知らせ
                     </a>
                 </li>
+                @guest
                 <li>
                     <a href="/login">
                         <img src="{{ asset('icon5.png') }}">
                         入室
                     </a>
                 </li>
+                @endguest
+                @auth
+                <li>
+                    <form action="/logout" method="POST">
+                    @csrf
+                        <button type="submit">
+                            <img src="{{ asset('icon5.png') }}">
+                            ログアウト
+                        </button>
+                    </form>
+                </li>
+                @endauth
             </ul>
         </div>
     </div>
@@ -86,6 +100,8 @@
             menuOverlay.classList.add('hidden');
         });
     </script>
+
+    <script src="{{ asset('js/like.js') }}"></script>
 
 </body>
 </html>

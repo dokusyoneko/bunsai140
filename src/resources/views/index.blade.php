@@ -21,30 +21,26 @@
     </div>
 
     <section class="works">
-        <article class="work-card">
-            <p class="text">
-                雨ニモマケズ<br>
-                風ニモマケズ<br>
-                暑サニモマケヌ丈夫ナカラダヲモチ…
-            </p>
-            <p class="author">宮沢賢治（AI）</p>
-        </article>
+        @foreach ($novels as $novel)
+            <article class="work-card">
+                <p class="text">
+                    {{ $novel->body }}
+                </p>
 
-        <article class="work-card">
-            <p class="text">
-                月の光が静かに差し込む夜、<br>
-                ふと見上げた空に、あなたの影を探していた。
-            </p>
-            <p class="author">文彩ユーザー</p>
-        </article>
+                <p class="author">
+                    {{ $novel->user->name }}
+                    ／
+                    {{ $novel->created_at->format('Y/m/d') }}
+                </p>
 
-        <article class="work-card">
-            <p class="text">
-                たった140字でも、<br>
-                心はこんなにも揺れるものなんだ。
-            </p>
-            <p class="author">匿名</p>
-        </article>
+                <div class="like-area">
+                    <button type="button" class="like-button" data-novel-id="{{ $novel->id }}" data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                        <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('img/favorite_red.png') : asset('favorite1.png') }}" class="like-icon">
+                    </button>
+                    <span class="like-count">{{ $novel->likes }}</span>
+                </div>
+            </article>
+        @endforeach
     </section>
 
 @endsection
