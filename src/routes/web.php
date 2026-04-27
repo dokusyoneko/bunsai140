@@ -5,6 +5,7 @@ use App\Http\Controllers\NovelController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\CreateController;
 
 
 /*
@@ -19,6 +20,9 @@ use App\Http\Controllers\MypageController;
 */
 
 Route::get('/novel', [NovelController::class, 'index']);
+Route::post('/novels', [NovelController::class, 'store'])
+    ->name('novels.store');
+
 
 Route::middleware('auth')->group(function () {
 Route::post('/novels/{novel}/like', [LikeController::class, 'toggle'])
@@ -27,18 +31,20 @@ Route::post('/novels/{novel}/like', [LikeController::class, 'toggle'])
 
 
 // 執筆を始める
-Route::get('/novel_create', function () {
-    return view('novel_create');
-});
-
-Route::get('/novel_create/thanks', function () {
-    return view('thanks');
-});
+Route::get('/novel_create', [CreateController::class, 'create'])
+->name('novel.create');
+Route::post('/novel_create', [CreateController::class, 'store'])
+->name('novel.store');
+Route::get('/novel_create/thanks', [CreateController::class, 'thanks'])
+->name('novel.thanks');
 
 
 // 書斎
 Route::get('/mypage', [MypageController::class, 'index'])
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('mypage.index');
+Route::get('/mypage/edit', [MypageController::class, 'edit'])->name('mypage.edit');
+Route::post('/mypage/update', [MypageController::class, 'update'])->name('mypage.update');
 
 // お知らせ
 Route::get('/news', function () {

@@ -65,7 +65,9 @@
         <div class="thanks__box">
             <h2>投稿完了</h2>
             <div>執筆お疲れ様でした。</div>
-            <button>作品一覧へ戻る</button>
+            <a href="{{ url('/novel') }}" class="thanks-button">
+            一覧へ戻る
+        </a>
         </div>
     </main>
 

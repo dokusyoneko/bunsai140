@@ -13,6 +13,7 @@ class Novel extends Model
         'user_id',
         'body',
         'likes',
+        'draft',
     ];
 
     // ▼ 文彩のリレーション設定 ▼

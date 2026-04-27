@@ -17,13 +17,22 @@ class MypageController extends Controller
         $user = Auth::user();
 
         // ユーザーの作品一覧
-        $novels = $user->novels()->latest()->get();
+        $novels = $user->novels()
+            ->where('draft', 0)
+            ->latest()
+            ->get();
 
         // お気に入り（いいねした作品）
-        $favorites = $user->favorites()->with('novel')->latest()->get();
+        $favorites = $user->favorites()
+            ->with('novel')
+            ->latest()
+            ->get();
 
         // 下書き一覧（draft = 1 の作品）
-        $drafts = $user->novels()->where('draft', 1)->latest()->get();
+        $drafts = $user->novels()
+            ->where('draft', 1)
+            ->latest()
+            ->get();
 
         return view('mypage', compact('user', 'novels', 'favorites', 'drafts'));
     }
@@ -35,7 +44,7 @@ class MypageController extends Controller
     public function edit()
     {
         $user = Auth::user();
-        return view('mypage.profile_edit', compact('user'));
+        return view('profile', compact('user'));
     }
 
     /**
