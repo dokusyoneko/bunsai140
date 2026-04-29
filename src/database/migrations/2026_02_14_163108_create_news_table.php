@@ -12,6 +12,7 @@ class CreateNewsTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('body');
+            $table->boolean('important')->default(false);
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

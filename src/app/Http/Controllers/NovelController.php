@@ -9,7 +9,11 @@ class NovelController extends Controller
 {
     public function index()
     {
-        $novels = Novel::with('user')->latest()->get();
+        $novels = Novel::with('user')
+            ->where('draft', 0)
+            ->latest()
+            ->get();
+
         return view('index', compact('novels'));
     }
 
