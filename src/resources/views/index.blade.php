@@ -15,9 +15,17 @@
     </div>
 
     <div class="tab">
-        <button class="new">新着</button>
-        <button class="favorite__month">人気（月）</button>
-        <button class="favorite__all">人気（全期間）</button>
+        <a href="{{ url('/novel?tab=new') }}">
+            <button class="{{ $tab === 'new' ? 'active' : '' }}">新着</button>
+        </a>
+
+        <a href="{{ url('/novel?tab=month') }}">
+            <button class="{{ $tab === 'month' ? 'active' : '' }}">人気（月）</button>
+        </a>
+
+        <a href="{{ url('/novel?tab=all') }}">
+            <button class="{{ $tab === 'all' ? 'active' : '' }}">人気（全期間）</button>
+        </a>
     </div>
 
     <section class="works">
