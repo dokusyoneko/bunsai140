@@ -60,18 +60,19 @@
                 <li>
                     <a href="/login">
                         <img src="{{ asset('icon5.png') }}">
-                        入室
+                        入室(ログイン)
                     </a>
                 </li>
                 @endguest
                 @auth
                 <li>
-                    <form action="/logout" method="POST">
-                    @csrf
-                        <button type="submit">
-                            <img src="{{ asset('icon5.png') }}">
-                            ログアウト
-                        </button>
+                    <a href="#" id="logout-link">
+                        <img src="{{ asset('icon5.png') }}">
+                        退室(ログアウト)
+                    </a>
+
+                    <form id="logout-form" action="/logout" method="POST" style="display:none;">
+                        @csrf
                     </form>
                 </li>
                 @endauth
@@ -99,9 +100,16 @@
             menuOverlay.classList.remove('active');
             menuOverlay.classList.add('hidden');
         });
+
+        document.getElementById('logout-link').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('logout-form').submit();
+        });
+
     </script>
 
     <script src="{{ asset('js/like.js') }}"></script>
+
 
 </body>
 </html>
