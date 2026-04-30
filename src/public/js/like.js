@@ -1,8 +1,8 @@
-document.querySelectorAll(".like-button").forEach((button) => {
+document.querySelectorAll(".like__button").forEach((button) => {
     button.addEventListener("click", async () => {
         const novelId = button.dataset.novelId;
-        const img = button.querySelector(".like-icon");
-        const countSpan = button.parentElement.querySelector(".like-count");
+        const img = button.querySelector(".like__icon");
+        const countSpan = button.parentElement.querySelector(".like__count");
 
         const response = await fetch(`/novels/${novelId}/like`, {
             method: "POST",
@@ -17,7 +17,7 @@ document.querySelectorAll(".like-button").forEach((button) => {
 
         const data = await response.json();
 
-        img.src = data.liked ? "/favorite2.png" : "/favorite1.png";
+        img.src = data.liked ? "favorite2.png" : "favorite1.png";
 
         countSpan.textContent = data.likes_count;
 

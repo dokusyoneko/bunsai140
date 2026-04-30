@@ -30,22 +30,26 @@
 
     <section class="works">
         @foreach ($novels as $novel)
-            <article class="work-card">
-                <p class="text">
+            <article class="work__card">
+                <p class="work__card__novel">
                     {{ $novel->body }}
                 </p>
+                <div class="work__card__meta">
+                    <div class="work__card__meta__inner">
+                        <div class="work__card__author">
+                            {{ $novel->user->name }}
+                        </div>
+                        <div class="work__card__date">
+                            {{ $novel->created_at->format('Y/m/d') }}
+                        </div>
+                    </div>
 
-                <p class="author">
-                    {{ $novel->user->name }}
-                    ／
-                    {{ $novel->created_at->format('Y/m/d') }}
-                </p>
-
-                <div class="like-area">
-                    <button type="button" class="like-button" data-novel-id="{{ $novel->id }}" data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
-                        <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('img/favorite_red.png') : asset('favorite1.png') }}" class="like-icon">
-                    </button>
-                    <span class="like-count">{{ $novel->likes }}</span>
+                    <div class="like__area">
+                        <button type="button" class="like__button" data-novel-id="{{ $novel->id }}" data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                            <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}" class="like__icon">
+                        </button>
+                        <span class="like__count">{{ $novel->likes }}</span>
+                    </div>
                 </div>
             </article>
         @endforeach

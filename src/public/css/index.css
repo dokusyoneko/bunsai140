@@ -43,13 +43,54 @@
 
 
 /* 作品カード */
-.work-card {
+.work__card {
     background: white;
-    padding: 24px;
+    padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-.like-icon{
-    text-decoration: none;
+.work__card__novel{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.work__card__meta {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    border-top: solid 1px rgb(194, 191, 191);
+}
+
+.work__card__meta__inner{
+    margin-top: 10px;
+
+}
+
+.work__card__date{
+    font-size: 14px;
+}
+
+.like__area{
+    display: flex;
+    align-items: center;
+}
+
+.like__button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.like__icon {
+    display: block;
+    width: 25px;
+    height: 25px;
 }
