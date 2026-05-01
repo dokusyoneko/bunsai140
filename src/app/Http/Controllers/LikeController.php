@@ -10,6 +10,10 @@ class LikeController extends Controller
 {
     public function toggle(Novel $novel)
     {
+        if (!auth()->check()) {
+        return response()->json(['error' => 'Unauthenticated'], 401);
+
+        }
         $user = auth()->user();
 
         // すでにいいねしているか？

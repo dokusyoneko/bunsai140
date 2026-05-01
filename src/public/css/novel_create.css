@@ -57,12 +57,12 @@
 /* 筆を休める（左） */
 .novel_storage {
     background: #e8e8e8;
-    color: #555;
+    color: #747272;
 }
 
 /* 投稿する（右） */
 .novel_post {
-    background-color: black;
+    background-color: rgb(105, 105, 105);
     color: white;
 }
 
@@ -72,5 +72,5 @@
 }
 
 .novel_post:hover {
-    background: #c7a77d;
+    background:  rgb(94, 93, 93);
 }

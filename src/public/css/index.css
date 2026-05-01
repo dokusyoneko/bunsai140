@@ -37,7 +37,7 @@
 }
 
 .tab button.active {
-    background-color: #e2d3c1;
+    background-color: #a09a94;
     color: white;
 }
 
@@ -48,7 +48,7 @@
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .work__card__novel{
