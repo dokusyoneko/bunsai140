@@ -19,8 +19,7 @@ body {
     left: 0;
     width: 450px;
     height: 450px;
-    background:
-        url('../Haikei1.png') no-repeat;
+    background: url("../Haikei1.png") no-repeat;
     background-size: contain;
     z-index: 0;
     pointer-events: none;
@@ -32,7 +31,7 @@ body {
     right: 0;
     height: 450px;
     width: 450px;
-    background: url('../Haikei2.png') no-repeat;
+    background: url("../Haikei2.png") no-repeat;
     background-size: contain;
     z-index: 0;
     pointer-events: none;
@@ -77,7 +76,6 @@ body {
     display: block;
     margin: 0 auto;
 }
-
 
 /* ===========================
    目録メニュー（オーバーレイ）
@@ -150,4 +148,75 @@ body {
 /* 非表示 */
 .hidden {
     display: none;
+}
+
+.thanks__box {
+    border: solid 1px black;
+    border-radius: 6px;
+    width: 20%;
+    height: 300px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.thanks__button {
+    border: solid 1px black;
+}
+
+
+/* ===========================
+   投稿完了カードの中央配置
+=========================== */
+.main__content {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===========================
+   白いカード
+=========================== */
+.thanks__box {
+    width: 380px;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid #e5dcd0;
+}
+
+/* タイトル */
+.thanks__title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #6b5c4a;
+    letter-spacing: 2px;
+}
+
+/* メッセージ */
+.thanks__message {
+    font-size: 18px;
+    margin-bottom: 35px;
+    color: #7a6a58;
+}
+
+/* ボタン */
+.thanks__button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #d8c7b3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.thanks__button:hover {
+    background-color: #c3b19c;
 }

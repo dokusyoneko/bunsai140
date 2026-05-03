@@ -66,4 +66,17 @@ class NovelController extends Controller
             ->with('success', $novel->draft ? '下書きに保存しました' : '投稿しました');
     }
 
+    public function destroy(Novel $novel)
+    {
+        // 自分の作品だけ削除可能
+        if ($novel->user_id !== auth()->id()) {
+            abort(403);
+        }
+
+        $novel->delete();
+
+        return redirect()->back()->with('message', '削除しました');
+    }
+
+
 }

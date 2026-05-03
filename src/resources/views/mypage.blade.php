@@ -43,9 +43,19 @@
                     <div class="meta">
                         <span class="date">{{ $novel->created_at->format('Y/m/d') }}</span>
 
-                        <div class="icons">
-                            <img src="{{ asset('img/like_off.png') }}" class="icon-like">
+                        <div class="like__area">
+                            <button type="button" class="like__button"
+                            data-novel-id="{{ $novel->id }}"
+                            data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                        <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}"class="like__icon">
+                            </button>
+                        <span class="like__count">{{ $novel->likes }}</span>
                         </div>
+                        <form action="{{ route('novels.destroy', $novel->id) }}" method="POST" class="delete-form">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete-button">削除</button>
+                        </form>
                     </div>
                 </div>
             </article>
@@ -66,8 +76,13 @@
                     <div class="meta">
                         <span class="date">{{ $fav->novel->created_at->format('Y/m/d') }}</span>
 
-                        <div class="icons">
-                            <img src="{{ asset('img/like_on.png') }}" class="icon-like">
+                        <div class="like__area">
+                            <button type="button" class="like__button"
+                            data-novel-id="{{ $novel->id }}"
+                            data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                        <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}"class="like__icon">
+                            </button>
+                        <span class="like__count">{{ $novel->likes }}</span>
                         </div>
                     </div>
                 </div>
@@ -88,10 +103,21 @@
 
                     <div class="meta">
                         <span class="date">{{ $draft->created_at->format('Y/m/d') }}</span>
-
-                        <div class="icons">
-                            <img src="{{ asset('img/draft.png') }}" class="icon-draft">
+                        <div class="like__area">
+                            <button type="button" class="like__button"
+                            data-novel-id="{{ $novel->id }}"
+                            data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                        <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}"class="like__icon">
+                            </button>
+                        <span class="like__count">{{ $novel->likes }}</span>
                         </div>
+                        <a href="{{ route('novel.create', ['edit' => $draft->id]) }}" class="edit-button">編集</a>
+                        <form action="{{ route('novels.destroy', $draft->id) }}" method="POST" class="delete-form">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete-button">削除</button>
+                        </form>
+
                     </div>
                 </div>
             </article>

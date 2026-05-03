@@ -63,11 +63,11 @@
 
     <main class="main__content">
         <div class="thanks__box">
-            <h2>投稿完了</h2>
-            <div>執筆お疲れ様でした。</div>
-            <a href="{{ url('/novel') }}" class="thanks-button">
+            <h2 class="thanks__title">投稿完了</h2>
+            <div class="thanks__message">執筆お疲れ様でした。</div>
+            <a href="{{ url('/novel') }}" class="thanks__button">
             一覧へ戻る
-        </a>
+            </a>
         </div>
     </main>
 

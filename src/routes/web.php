@@ -23,6 +23,10 @@ use App\Http\Controllers\NewsController;
 Route::get('/novel', [NovelController::class, 'index']);
 Route::post('/novels', [NovelController::class, 'store'])
     ->name('novels.store');
+Route::delete('/novels/{novel}', [NovelController::class, 'destroy'])
+    ->name('novels.destroy')
+    ->middleware('auth');
+
 
 
 Route::middleware('auth')->group(function () {
@@ -32,12 +36,18 @@ Route::post('/novels/{novel}/like', [LikeController::class, 'toggle'])
 
 
 // 執筆を始める
+Route::middleware('auth')->group(function () {
 Route::get('/novel_create', [CreateController::class, 'create'])
 ->name('novel.create');
 Route::post('/novel_create', [CreateController::class, 'store'])
 ->name('novel.store');
 Route::get('/novel_create/thanks', [CreateController::class, 'thanks'])
 ->name('novel.thanks');
+});
+Route::post('/novel_update/{novel}', [CreateController::class, 'update'])
+    ->name('novel.update')
+    ->middleware('auth');
+
 
 
 // 書斎
