@@ -41,13 +41,12 @@ class User extends Authenticatable
     // 1ユーザーは複数の小説にいいねできる
     public function likes()
     {
-        return $this->belongsToMany(Novel::class, 'likes');
+        return $this->hasMany(\App\Models\Like::class);
     }
 
     public function favorites()
     {
-        return $this->hasMany(\App\Models\Like::class);
+        return $this->belongsToMany(Novel::class, 'likes');
     }
-
 
 }

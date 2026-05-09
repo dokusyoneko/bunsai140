@@ -12,30 +12,21 @@ class MypageController extends Controller
     /**
      * 書斎トップページ
      */
-    public function index()
+    public function index(Request $request)
     {
-        $user = Auth::user();
+        $user = auth()->user();
 
-        // ユーザーの作品一覧
-        $novels = $user->novels()
-            ->where('draft', 0)
-            ->latest()
-            ->get();
+        $tab = $request->query('tab', 'works');
 
-        // お気に入り（いいねした作品）
-        $favorites = $user->favorites()
-            ->with('novel')
-            ->latest()
-            ->get();
-
-        // 下書き一覧（draft = 1 の作品）
-        $drafts = $user->novels()
-            ->where('draft', 1)
-            ->latest()
-            ->get();
-
-        return view('mypage', compact('user', 'novels', 'favorites', 'drafts'));
+        return view('mypage', [
+            'user' => $user,
+            'tab' => $tab,
+            'novels' => $user->novels()->where('draft', 0)->latest()->get(),
+            'favorites' => $user->likes()->with('novel.user')->get(),
+            'drafts' => $user->novels()->where('draft', 1)->latest()->get(),
+        ]);
     }
+
 
 
     /**
