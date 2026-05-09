@@ -5,8 +5,6 @@
 @endsection
 
 @section('content')
-<div class="mypage">
-
     {{-- プロフィール --}}
     <div class="profile">
         <img src="{{ $user->avatar ? asset('storage/'.$user->avatar) : asset('img/default_icon.png') }}" class="profile__avatar" alt="プロフィール画像">
@@ -38,49 +36,47 @@
     {{-- 作品一覧 --}}
     @if ($tab === 'works')
         @foreach ($novels as $novel)
-            <article class="work-card">
-                <p class="text">{!! nl2br(e($novel->body)) !!}</p>
+            <article class="work__card">
+                <p class="work__card__novel">{!! nl2br(e($novel->body)) !!}</p>
+                <div class="work__card__meta">
+                    <div class="work__card__meta__inner">
+                        <div class="work__card__author">{{ $novel->user->name }}</div>
+                        <div class="work__card__date">{{ $novel->created_at->format('Y/m/d') }}</div>
+                    </div>
 
-                <div class="work-card__footer">
-                    <div class="author">{{ $novel->user->name }}</div>
-                    <div class="meta">
-                        <span class="date">{{ $novel->created_at->format('Y/m/d') }}</span>
-
-                        <div class="like__area">
-                            <button type="button" class="like__button"
-                                data-novel-id="{{ $novel->id }}"
-                                data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
-                                <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}"
-                                    class="like__icon">
-                            </button>
-                            <span class="like__count">{{ $novel->likes }}</span>
-                        </div>
+                    <div class="like__area">
+                        <button type="button" class="like__button"
+                            data-novel-id="{{ $novel->id }}"
+                            data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                            <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('img/favorite2.png') : asset('img/favorite1.png') }}" class="like__icon">
+                        </button>
+                        <span class="like__count">{{ $novel->likes }}</span>
                     </div>
                 </div>
             </article>
         @endforeach
+
     @endif
 
     {{-- お気に入り --}}
     @if ($tab === 'favorites')
         @foreach ($favorites as $fav)
-            <article class="work-card">
-                <p class="text">{!! nl2br(e($fav->novel->body)) !!}</p>
+            <article class="work__card">
+                <p class="work__card__novel">{!! nl2br(e($fav->novel->body)) !!}</p>
 
-                <div class="work-card__footer">
-                    <div class="author">{{ $fav->novel->user->name }}</div>
-                    <div class="meta">
-                        <span class="date">{{ $fav->novel->created_at->format('Y/m/d') }}</span>
+                <div class="work__card__meta">
+                    <div class="work__card__meta__inner">
+                        <div class="work__card__author">{{ $fav->novel->user->name }}</div>
+                        <div class="work__card__date">{{ $fav->novel->created_at->format('Y/m/d') }}</div>
+                    </div>
 
-                        <div class="like__area">
-                            <button type="button" class="like__button"
-                                data-novel-id="{{ $fav->novel->id }}"
-                                data-liked="{{ $fav->novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
-                                <img src="{{ $fav->novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}"
-                                    class="like__icon">
-                            </button>
-                            <span class="like__count">{{ $fav->novel->likes }}</span>
-                        </div>
+                    <div class="like__area">
+                        <button type="button" class="like__button"
+                            data-novel-id="{{ $fav->novel->id }}"
+                            data-liked="{{ $fav->novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                            <img src="{{ $fav->novel->isLikedBy(auth()->user()) ? asset('img/favorite2.png') : asset('img/favorite1.png') }}"class="like__icon">
+                        </button>
+                        <span class="like__count">{{ $fav->novel->likes }}</span>
                     </div>
                 </div>
             </article>
@@ -90,14 +86,16 @@
     {{-- 下書き --}}
     @if ($tab === 'drafts')
         @foreach ($drafts as $draft)
-            <article class="work-card">
-                <p class="text">{!! nl2br(e($draft->body)) !!}</p>
+            <article class="work__card">
+                <p class="work__card__novel">{!! nl2br(e($draft->body)) !!}</p>
 
-                <div class="work-card__footer">
-                    <div class="author">{{ $user->name }}</div>
-                    <div class="meta">
-                        <span class="date">{{ $draft->created_at->format('Y/m/d') }}</span>
+                <div class="work__card__meta">
+                    <div class="work__card__meta__inner">
+                        <div class="work__card__author">{{ $user->name }}</div>
+                        <div class="work__card__date">{{ $draft->created_at->format('Y/m/d') }}</div>
+                    </div>
 
+                    <div class="work__card__actions">
                         <a href="{{ route('novel.create', ['edit' => $draft->id]) }}" class="edit-button">編集</a>
 
                         <form action="{{ route('novels.destroy', $draft->id) }}" method="POST" class="delete-form">
@@ -110,7 +108,5 @@
             </article>
         @endforeach
     @endif
-
-</div>
 @endsection
 

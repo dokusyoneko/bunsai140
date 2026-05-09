@@ -1,8 +1,4 @@
-.mypage{
-    width: 60%;
-    margin: 0 auto;
-    text-align: center;
-}
+
 
 /* プロフィール */
 .profile {
@@ -34,7 +30,7 @@
 .profile__edit__button {
     display: inline-block;
     padding: 8px 20px;
-    background-color: #d8b6c2;
+    background-color: #a09a94;
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -43,84 +39,97 @@
 }
 
 .profile__edit__button:hover {
-    background-color: #c79aad;
+    background-color: #837b74;
 }
 
 /* タブ */
 .tab {
     display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 25px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
 }
 
-.tab__button {
+.tab button {
+    padding: 8px 20px;
     background: none;
     border: none;
-    font-size: 16px;
-    padding-bottom: 6px;
     cursor: pointer;
-    color: #666;
-    position: relative;
+    font-size: 16px;
 }
 
-.tab__button.active {
-    color: #616060;
-    font-weight: bold;
-}
-
-.tab__button.active::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #c79aad;
-    border-radius: 2px;
+.tab button.active {
+    background-color: #a09a94;
+    color: white;
 }
 
 /* 作品カード */
-.work-card {
+.work__card {
     background: white;
-    padding: 18px 20px;
+    padding: 12px;
     margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #ddd;
+    border-radius: 6px;
 }
 
-.work-card .text {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    white-space: pre-wrap;
+.work__card__novel {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-.work-card__footer {
+.work__card__meta {
+    width: 90%;
     display: flex;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
+    margin-top: 12px;
+    border-top: solid 1px rgb(194, 191, 191);
 }
 
-.author {
+.work__card__meta__inner {
+    margin-top: 10px;
+}
+
+.work__card__date {
     font-size: 14px;
-    font-weight: bold;
-    color: #444;
 }
 
-.meta {
+.like__area {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
-.date {
-    font-size: 12px;
-    color: #777;
-}
-
-.icons img {
-    width: 20px;
-    height: 20px;
+.like__button {
+    background: none;
+    border: none;
+    padding: 0;
     cursor: pointer;
+}
+
+.like__icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
+.work__card__actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.edit-button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    background-color: rgb(216, 213, 213);
+    width: 40px;
+    text-align: center;
+    font-size: 14px;
 }

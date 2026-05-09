@@ -28,9 +28,7 @@ document.querySelectorAll(".like__button").forEach((button) => {
             const data = await response.json();
 
             // ここは今 S さんの環境で正しく映っている形に合わせてOK
-            img.src = data.liked
-                ? "/img/favorite_red.png"
-                : "/img/favorite1.png";
+            img.src = data.liked ? "/img/favorite2.png" : "/img/favorite1.png";
 
             countSpan.textContent = data.likes_count;
             button.dataset.liked = data.liked ? "1" : "0";

@@ -17,11 +17,11 @@
     <!-- ヘッダー -->
     <header class="header">
         <a href="/novel">
-            <img src="{{ asset('headerlogo.png') }}" class="logo" alt="ヘッダーロゴ画像">
+            <img src="{{ asset('img/headerlogo.png') }}" class="logo" alt="ヘッダーロゴ画像">
         </a>
         <nav class="nav">
             <div id="menu__button" class="menu-trigger">
-                <img src="{{ asset('nav.png') }}" class="nav__img" alt="menu画像">
+                <img src="{{ asset('img/nav.png') }}" class="nav__img" alt="menu画像">
             </div>
         </nav>
     </header>
@@ -29,37 +29,37 @@
     <!-- メニュー -->
     <div id="menu-overlay" class="menu-overlay hidden">
         <div class="menu-box">
-            <img src="{{ asset('icon0.png') }}" class="menu-close" id="menu-close">
+            <img src="{{ asset('img/icon0.png') }}" class="menu-close" id="menu-close">
 
             <ul class="menu-list">
                 <li>
                     <a href="/novel">
-                        <img src="{{ asset('icon1.png') }}">
+                        <img src="{{ asset('img/icon1.png') }}">
                         作品一覧
                     </a>
                 </li>
                 <li>
                     <a href="/novel_create">
-                        <img src="{{ asset('icon2.png') }}">
+                        <img src="{{ asset('img/icon2.png') }}">
                         執筆を始める
                     </a>
                 </li>
                 <li>
                     <a href="/mypage">
-                        <img src="{{ asset('icon3.png') }}">
+                        <img src="{{ asset('img/icon3.png') }}">
                         書斎
                     </a>
                 </li>
                 <li>
                     <a href="/news">
-                        <img src="{{ asset('icon4.png') }}">
+                        <img src="{{ asset('img/icon4.png') }}">
                         お知らせ
                     </a>
                 </li>
                 @guest
                 <li>
                     <a href="/login">
-                        <img src="{{ asset('icon5.png') }}">
+                        <img src="{{ asset('img/icon5.png') }}">
                         入室(ログイン)
                     </a>
                 </li>
@@ -67,7 +67,7 @@
                 @auth
                 <li>
                     <a href="#" id="logout-link">
-                        <img src="{{ asset('icon5.png') }}">
+                        <img src="{{ asset('img/icon5.png') }}">
                         退室(ログアウト)
                     </a>
 

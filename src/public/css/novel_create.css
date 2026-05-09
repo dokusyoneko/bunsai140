@@ -1,6 +1,6 @@
 /* 全体の余白調整 */
 .main__content__inner {
-    width: 40%;
+    width: 80%;
     margin: 40px auto;
 }
 
@@ -21,11 +21,11 @@
     line-height: 1.8;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgb(255, 255, 255);
     resize: none;
     outline: none;
     font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
 /* placeholder（画像の雰囲気に合わせて淡く） */
@@ -40,6 +40,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    width: 100%;
 }
 
 /* ボタン共通 */
@@ -72,5 +73,12 @@
 }
 
 .novel_post:hover {
-    background:  rgb(94, 93, 93);
+    background: rgb(94, 93, 93);
+}
+
+.main__content__inner form,
+.textarea__novel,
+.novel-buttons {
+    width: 100%;
+    box-sizing: border-box;
 }

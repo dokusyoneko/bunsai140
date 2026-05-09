@@ -13,7 +13,7 @@
         @csrf
         <div class="form__group">
             <div class="form__group-title">
-                <span class="form__label--item">ユーザー名</span>
+                <span class="form__label--item">ペンネーム</span>
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
@@ -43,7 +43,7 @@
         </div>
         <div class="form__group">
             <div class="form__group-title">
-                <span class="form__label--item">パスワード</span>
+                <span class="form__label--item">合言葉</span>
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="form__error">
                     @error('password')
-                        @if($message !== 'パスワードと一致しません')
+                        @if($message !== '合言葉が一致しません')
                             {{ $message }}
                         @endif
                     @enderror
@@ -60,7 +60,7 @@
         </div>
         <div class="form__group">
             <div class="form__group-title">
-                <span class="form__label--item">確認用パスワード</span>
+                <span class="form__label--item">確認用合言葉</span>
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="form__error">
                     @error('password')
-                        @if($message === 'パスワードと一致しません')
+                        @if($message === '合言葉が一致しません')
                             {{ $message }}
                         @endif
                     @enderror
@@ -80,7 +80,7 @@
         </div>
     </form>
     <div class="login__link">
-        <a class="login__button-submit" href="/login">ログインはこちら</a>
+        <a class="login__button-submit" href="/login">入室はこちら</a>
     </div>
 </div>
 @endsection

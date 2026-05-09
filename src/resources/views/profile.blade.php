@@ -14,7 +14,6 @@
 
         {{-- アイコン画像 --}}
         <div class="form-group avatar-group">
-            <label class="label">アイコン画像</label>
 
             <div class="avatar-preview">
                 <img src="{{ $user->avatar ? asset('storage/'.$user->avatar) : asset('img/default_icon.png') }}" class="avatar-img" alt="アイコン画像">
@@ -28,7 +27,7 @@
 
         {{-- 名前 --}}
         <div class="form-group">
-            <label class="label">ユーザー名</label>
+            <label class="label">ペンネーム</label>
             <input type="text" name="name" class="input-text" value="{{ old('name', $user->name) }}">
             @error('name')
                 <p class="error">{{ $message }}</p>

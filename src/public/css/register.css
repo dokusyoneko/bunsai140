@@ -52,12 +52,12 @@
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #ff5555;
+    background: #8f7474;
     color: #fff;
     cursor: pointer;
     font-weight: bold;
     font-size: 18px;
-    margin-top: 45px;
+    margin-top: 20px;
 }
 
 .login__link {
@@ -66,7 +66,7 @@
 }
 
 .login__button-submit {
-    color: blue;
+    color: rgb(148, 132, 113);
     font-size: 15px;
     text-decoration: none;
 }

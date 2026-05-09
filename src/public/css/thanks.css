@@ -17,9 +17,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 450px;
-    height: 450px;
-    background: url("../Haikei1.png") no-repeat;
+    width: 500px;
+    height: 500px;
+    background: url("../img/Haikei1.png") no-repeat;
     background-size: contain;
     z-index: 0;
     pointer-events: none;
@@ -29,9 +29,9 @@ body {
     position: fixed;
     bottom: 0;
     right: 0;
-    height: 450px;
-    width: 450px;
-    background: url("../Haikei2.png") no-repeat;
+    height: 500px;
+    width: 500px;
+    background: url("../img/Haikei2.png") no-repeat;
     background-size: contain;
     z-index: 0;
     pointer-events: none;

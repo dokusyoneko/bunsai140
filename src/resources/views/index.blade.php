@@ -46,7 +46,7 @@
 
                     <div class="like__area">
                         <button type="button" class="like__button" data-novel-id="{{ $novel->id }}" data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
-                            <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}" class="like__icon">
+                            <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('img/favorite2.png') : asset('img/favorite1.png') }}" class="like__icon">
                         </button>
                         <span class="like__count">{{ $novel->likes }}</span>
                     </div>

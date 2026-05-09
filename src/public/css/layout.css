@@ -20,7 +20,7 @@ body {
     width: 450px;
     height: 450px;
     background:
-        url('../sirokurohaikei3.png') no-repeat;
+        url('../img/sirokurohaikei3.png') no-repeat;
     background-size: contain;
     z-index: 0;
     pointer-events: none;
@@ -32,7 +32,7 @@ body {
     right: 0;
     height: 450px;
     width: 450px;
-    background: url('../sirokurohaikei4.png') no-repeat;
+    background: url('../img/sirokurohaikei4.png') no-repeat;
     background-size: contain;
     z-index: 0;
     pointer-events: none;
@@ -150,4 +150,11 @@ body {
 /* 非表示 */
 .hidden {
     display: none;
+}
+
+.main__contents {
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
