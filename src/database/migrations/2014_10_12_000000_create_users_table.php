@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             // 0 = admin, 1 = user
             $table->unsignedTinyInteger('role')->default(1);
 
+            $table->string('avatar')->nullable();
+            $table->text('profile_message')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

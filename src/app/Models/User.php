@@ -16,7 +16,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role', // ← 追加
+        'role',
+        'avatar',
+        'profile_message',
     ];
 
     protected $hidden = [

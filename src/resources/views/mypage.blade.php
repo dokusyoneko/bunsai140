@@ -78,11 +78,11 @@
 
                         <div class="like__area">
                             <button type="button" class="like__button"
-                            data-novel-id="{{ $novel->id }}"
-                            data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
-                        <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}"class="like__icon">
+                            data-novel-id="{{ $fav->novel->id }}"
+                            data-liked="{{ $fav->novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                        <img src="{{ $fav->novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}" class="like__icon">
                             </button>
-                        <span class="like__count">{{ $novel->likes }}</span>
+                        <span class="like__count">{{ $fav->novel->likes }}</span>
                         </div>
                     </div>
                 </div>
@@ -103,14 +103,6 @@
 
                     <div class="meta">
                         <span class="date">{{ $draft->created_at->format('Y/m/d') }}</span>
-                        <div class="like__area">
-                            <button type="button" class="like__button"
-                            data-novel-id="{{ $novel->id }}"
-                            data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
-                        <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('favorite2.png') : asset('favorite1.png') }}"class="like__icon">
-                            </button>
-                        <span class="like__count">{{ $novel->likes }}</span>
-                        </div>
                         <a href="{{ route('novel.create', ['edit' => $draft->id]) }}" class="edit-button">編集</a>
                         <form action="{{ route('novels.destroy', $draft->id) }}" method="POST" class="delete-form">
                             @csrf

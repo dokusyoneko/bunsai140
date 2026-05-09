@@ -11,24 +11,39 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => '宮下 奈都',
-            'email' => 'miyashita@example.com',
+        'name' => 'テストユーザー',
+        'email' => 'test@example.com',
+        'password' => Hash::make('1234567890'),
+        'role' => 1,
+        'avatar' => null,
+        'profile_message' => 'テストユーザーです。',
+]);
+
+        User::create([
+            'name' => 'A太郎',
+            'email' => 'ataro@example.com',
             'password' => Hash::make('password'),
             'role' => 1, // 一般ユーザー
+            'avatar' => null,
+            'profile_message' => 'A太郎です。',
         ]);
 
         User::create([
-            'name' => '彩瀬まる',
-            'email' => 'ayase@example.com',
+            'name' => 'B子',
+            'email' => 'bko@example.com',
             'password' => Hash::make('password'),
             'role' => 1,
+            'avatar' => null,
+            'profile_message' => 'B子です。',
         ]);
 
         User::create([
-            'name' => 'ほしおさなえ',
-            'email' => 'hoshio@example.com',
+            'name' => 'C奈',
+            'email' => 'cna@example.com',
             'password' => Hash::make('password'),
             'role' => 1,
+            'avatar' => null,
+            'profile_message' => 'C奈です。',
         ]);
     }
 }
