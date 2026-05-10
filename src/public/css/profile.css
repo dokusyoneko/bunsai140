@@ -71,7 +71,7 @@
 
 .save-button {
     padding: 10px 25px;
-    background-color: #d8b6c2;
+    background-color: rgb(105, 105, 105);
     color: white;
     border: none;
     border-radius: 20px;
@@ -80,7 +80,7 @@
 }
 
 .save-button:hover {
-    background-color: #c79aad;
+    background: rgb(94, 93, 93);
 }
 
 .back-button {

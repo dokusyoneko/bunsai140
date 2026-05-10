@@ -45,5 +45,12 @@ class UserSeeder extends Seeder
             'avatar' => null,
             'profile_message' => 'C奈です。',
         ]);
+
+        User::create([
+            'name' => 'admin',
+            'email' => 'admin@example.com',
+            'password' => Hash::make('password'),
+            'role' => 0,
+        ]);
     }
 }

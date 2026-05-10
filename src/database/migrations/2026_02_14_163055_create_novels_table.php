@@ -14,6 +14,7 @@ class CreateNovelsTable extends Migration
             $table->text('body'); // 140字の本文
             $table->unsignedInteger('likes')->default(0); // いいね数
             $table->boolean('draft')->default(0);
+            $table->softDeletes(); // ★ これを追加
             $table->timestamps();
         });
     }

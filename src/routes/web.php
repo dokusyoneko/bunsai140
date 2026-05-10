@@ -7,6 +7,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminNovelController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\AdminNewsController;
+
 
 
 /*
@@ -64,4 +69,18 @@ Route::get('/news', [NewsController::class, 'index'])
 Route::get('/', function () {
     return redirect('/novel');
 });
+
+// 管理者
+Route::get('/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.login.post');
+Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
+
+Route::prefix('admin')
+    ->middleware(['auth', 'admin'])
+    ->group(function () {
+
+        Route::get('/novel', [AdminNovelController::class, 'index']);
+        Route::get('/user', [AdminUserController::class, 'index']);
+        Route::get('/news', [AdminNewsController::class, 'index']);
+    });
 
