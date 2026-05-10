@@ -80,7 +80,16 @@ Route::prefix('admin')
     ->group(function () {
 
         Route::get('/novel', [AdminNovelController::class, 'index']);
+        // ★ 追加：削除
+        Route::post('/novel/{id}/delete', [AdminNovelController::class, 'delete'])
+            ->name('admin.novel.delete');
+
+        // ★ 追加：復元
+        Route::post('/novel/{id}/restore', [AdminNovelController::class, 'restore'])
+            ->name('admin.novel.restore');
         Route::get('/user', [AdminUserController::class, 'index']);
+        Route::post('/user/{id}/ban', [AdminUserController::class, 'ban'])->name('admin.user.ban');
+        Route::post('/user/{id}/unban', [AdminUserController::class, 'unban'])->name('admin.user.unban');
         Route::get('/news', [AdminNewsController::class, 'index']);
     });
 

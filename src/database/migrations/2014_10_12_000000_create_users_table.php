@@ -15,10 +15,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-
             // 0 = admin, 1 = user
             $table->unsignedTinyInteger('role')->default(1);
-
+            $table->boolean('is_banned')->default(false);
             $table->string('avatar')->nullable();
             $table->text('profile_message')->nullable();
 
