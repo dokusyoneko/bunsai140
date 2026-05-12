@@ -7,7 +7,7 @@
 @section('content')
 <div class="login-form__content">
     <div class="login-form__heading">
-        <h2>入室(ログイン)</h2>
+        <h2>管理室へ入室(ログイン)</h2>
     </div>
     <form class="form" action="/admin/login" method="post">
         @csrf
@@ -45,8 +45,5 @@
             <button class="form__button-submit" type="submit">入室する</button>
         </div>
     </form>
-    <div class="register__link">
-        <a class="register__button-submit" href="/register">初めての方はこちら</a>
-    </div>
 </div>
 @endsection

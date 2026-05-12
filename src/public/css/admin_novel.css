@@ -1,0 +1,117 @@
+.main__contents {
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.title{
+    text-align: center;
+
+}
+
+/* タブ */
+.tab {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    justify-content: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab a {
+    padding: 8px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tab a.active {
+    background-color: #a09a94;
+    color: white;
+}
+
+
+/* 作品カード */
+.work__card {
+    background: white;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.draft-label {
+    display: inline-block;
+    background: #f0ad4e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+.work__card__novel{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.work__card__meta {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    border-top: solid 1px rgb(194, 191, 191);
+}
+
+.work__card__meta__inner{
+    margin-top: 10px;
+
+}
+
+.work__card__date{
+    font-size: 14px;
+}
+
+.like__area{
+    display: flex;
+    align-items: center;
+}
+
+.like__icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+}
+
+.admin-actions {
+    text-align: right;
+    margin-left: 15px;
+    align-items: center;
+}
+
+.btn-delete {
+    background: #ff6b6b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-restore {
+    background: #4caf50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}

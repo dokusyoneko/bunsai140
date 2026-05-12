@@ -9,8 +9,19 @@ class AdminNovelController extends Controller
 {
     public function index()
     {
-        $novels = Novel::withTrashed()->get();
-        return view('admin.novel', compact('novels'));
+        $status = request('status', 'active');
+
+        $query = Novel::with(['user'])->withTrashed();
+
+        if ($status === 'active') {
+            $query->whereNull('deleted_at');
+        } elseif ($status === 'deleted') {
+            $query->whereNotNull('deleted_at');
+        }
+
+        $novels = $query->get();
+
+        return view('admin.novel', compact('novels', 'status'));
     }
 
     public function delete($id)
@@ -26,5 +37,4 @@ class AdminNovelController extends Controller
         $novel->restore(); // SoftDeletes の restore()
         return redirect()->back()->with('status', '復元しました');
     }
-
 }
