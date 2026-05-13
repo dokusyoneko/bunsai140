@@ -7,14 +7,11 @@
 @section('content')
     {{-- プロフィール --}}
     <div class="profile">
-        <img src="{{ $user->avatar ? asset('storage/'.$user->avatar) : asset('img/default_icon.png') }}" class="profile__avatar" alt="プロフィール画像">
-
+        <img src="{{ $user->avatar ? asset('storage/' .$user->avatar) : asset('img/default.png') }}" class="avatar" alt="プロフィール画像">
         <div class="profile__name">{{ $user->name }}</div>
-
         <div class="profile__message">
             {{ $user->profile_message ?? 'まだ自己紹介がありません' }}
         </div>
-
         <a href="{{ route('mypage.edit') }}" class="profile__edit__button">
             プロフィール編集
         </a>

@@ -1,0 +1,98 @@
+.main__contents {
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.title{
+    text-align: center;
+
+}
+
+.tab {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    justify-content: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab a {
+    padding: 8px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tab a.active {
+    background-color: #a09a94;
+    color: white;
+}
+
+.user__card {
+    background: white;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* アイコン + 名前の横並び */
+.user__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* プロフィール画像 */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* 丸くする */
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.user__name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.user__meta {
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    border-top: solid 1px rgb(194, 191, 191);
+}
+
+.user__meta__inner {
+    margin-top: 10px;
+}
+
+.user__email,
+.user__date {
+    font-size: 14px;
+    color: #555;
+}
+
+.admin-actions {
+    margin-left: 15px;
+}
+
+.btn-delete{
+    background: #ff6b6b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
