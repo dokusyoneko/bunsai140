@@ -87,9 +87,15 @@ Route::prefix('admin')
         // ★ 追加：復元
         Route::post('/novel/{id}/restore', [AdminNovelController::class, 'restore'])
             ->name('admin.novel.restore');
+
         Route::get('/user', [AdminUserController::class, 'index']);
         Route::post('/user/{id}/ban', [AdminUserController::class, 'ban'])->name('admin.user.ban');
         Route::post('/user/{id}/unban', [AdminUserController::class, 'unban'])->name('admin.user.unban');
-        Route::get('/news', [AdminNewsController::class, 'index']);
+
+        Route::get('/news', [AdminNewsController::class, 'index'])->name('admin.news.index');
+        Route::post('/news/store', [AdminNewsController::class, 'store'])->name('admin.news.store');
+        Route::post('/news/{id}/delete', [AdminNewsController::class, 'delete'])->name('admin.news.delete');
+
+
     });
 

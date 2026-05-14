@@ -51,6 +51,8 @@
     border-radius: 6px;
 }
 
+
+
 .work__card__novel{
     width: 90%;
     margin: 0 auto;
@@ -70,7 +72,21 @@
 
 .work__card__meta__inner{
     margin-top: 10px;
+}
 
+.work__card__author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ccc;
 }
 
 .work__card__date{
