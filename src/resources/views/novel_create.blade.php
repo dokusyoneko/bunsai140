@@ -17,7 +17,7 @@
 @endif
 
         <div class="char-count">0/140</div>
-        <textarea class="textarea__novel" name="body" maxlength="140" placeholder="ここに物語を綴ってください、、、" oninput="countChars()">{{ old('body', $novel->body ?? '') }}</textarea>
+        <textarea class="textarea__novel" name="body"  placeholder="ここに物語を綴ってください、、、" oninput="countChars()">{{ old('body', $novel->body ?? '') }}</textarea>
         <div class="novel-buttons">
         <button type="submit" name="action" value="draft" class="novel_storage">筆を休める</button>
         <button type="submit" name="action" value="publish" class="novel_post">投稿する</button>
