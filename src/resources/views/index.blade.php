@@ -50,6 +50,13 @@
                             <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('img/favorite2.png') : asset('img/favorite1.png') }}" class="like__icon">
                         </button>
                         <span class="like__count">{{ $novel->likes }}</span>
+                        @if ($novel->user_id === auth()->id())
+                        <form action="{{ route('novels.destroy', $novel->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="delete-button">削除</button>
+                    </form>
+                    @endif
                     </div>
                 </div>
             </article>
