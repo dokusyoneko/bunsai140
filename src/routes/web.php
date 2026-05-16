@@ -59,9 +59,9 @@ Route::post('/novel_create', [CreateController::class, 'store'])
 Route::get('/novel_create/thanks', [CreateController::class, 'thanks'])
 ->name('novel.thanks');
 });
-Route::post('/novel_update/{novel}', [CreateController::class, 'update'])
-    ->name('novel.update')
-    ->middleware('auth');
+Route::put('/novel_update/{novel}', [CreateController::class, 'update'])
+    ->name('novel.update');
+
 
 
 

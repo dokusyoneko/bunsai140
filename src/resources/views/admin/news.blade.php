@@ -20,9 +20,20 @@
         <input type="text" name="title" class="form-input"
             placeholder="例：システムメンテナンスのお知らせ">
 
+        <div class="form__error">
+            @error('title')
+            {{ $message }}
+            @enderror
+        </div>
+
         <label class="form-label">本文</label>
         <textarea name="body" class="form-textarea"
             placeholder="お知らせの内容を入力してください…"></textarea>
+        <div class="form__error">
+            @error('body')
+            {{ $message }}
+            @enderror
+        </div>
 
         <label class="form-checkbox">
             <input type="checkbox" name="is_important" value="1">

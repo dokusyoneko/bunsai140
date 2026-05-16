@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
+use App\Http\Requests\NewsRequest;
 
 
 class AdminNewsController extends Controller
@@ -16,7 +17,7 @@ class AdminNewsController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
         $request->validate([
             'title' => 'required|string|max:255',

@@ -29,7 +29,7 @@ class NovelRequest extends FormRequest
     public function messages()
 {
     return [
-        'body.required' => '本文を入力してください',
+        'body.required' => '本文が書かれていません',
         'body.string'   => '本文は文字列で入力してください',
         'body.max'      => '140字を超えています',
         'body.max.string' => '140字を超えています',

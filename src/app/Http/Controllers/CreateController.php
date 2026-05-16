@@ -33,7 +33,7 @@ class CreateController extends Controller
 
         $novel = new Novel();
         $novel->user_id = Auth::id();
-        $novel->body = $validated['body'];
+        $novel->body = $data['body'];;
 
         // 下書き保存
         if ($request->action === 'draft') {

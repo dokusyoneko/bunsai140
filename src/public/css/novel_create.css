@@ -82,3 +82,7 @@
     width: 100%;
     box-sizing: border-box;
 }
+
+.error-message{
+    color: red;
+}

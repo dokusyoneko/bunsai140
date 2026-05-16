@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Novel;
 use App\Models\User;
+use App\Http\Requests\ProfileRequest;
 
 class MypageController extends Controller
 {
@@ -41,19 +42,15 @@ class MypageController extends Controller
     /**
      * プロフィール更新処理
      */
-    public function update(Request $request)
+    public function update(ProfileRequest $request)
     {
         $user = Auth::user();
 
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'profile_message' => 'nullable|string|max:500',
-            'avatar' => 'nullable|image|max:2048',
-        ]);
+        $data = $request->validated();
 
         // 名前・紹介文の更新
-        $user->name = $validated['name'];
-        $user->profile_message = $validated['profile_message'] ?? null;
+        $user->name = $data['name'];
+        $user->profile_message = $data['profile_message'] ?? null;
 
         // アイコン画像の更新
         if ($request->hasFile('avatar')) {
