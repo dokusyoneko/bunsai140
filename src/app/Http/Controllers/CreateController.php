@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Novel;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\NovelRequest;
+
 
 class CreateController extends Controller
 {
@@ -25,11 +27,9 @@ class CreateController extends Controller
     }
 
     // 新規投稿
-    public function store(Request $request)
+    public function store(NovelRequest $request)
     {
-        $validated = $request->validate([
-            'body' => 'required|string|max:140',
-        ]);
+        $data = $request->validated();
 
         $novel = new Novel();
         $novel->user_id = Auth::id();
@@ -50,18 +50,15 @@ class CreateController extends Controller
     }
 
     // 編集更新
-    public function update(Request $request, Novel $novel)
+    public function update(NovelRequest $request, Novel $novel)
     {
         // 自分の作品以外は編集不可
         if ($novel->user_id !== Auth::id()) {
             abort(403);
         }
 
-        $validated = $request->validate([
-            'body' => 'required|string|max:140',
-        ]);
-
-        $novel->body = $validated['body'];
+        $data = $request->validated();
+        $novel->body = $data['body'];
 
         // 下書き更新
         if ($request->action === 'draft') {
