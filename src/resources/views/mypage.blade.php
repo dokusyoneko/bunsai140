@@ -37,7 +37,10 @@
                 <p class="work__card__novel">{!! nl2br(e($novel->body)) !!}</p>
                 <div class="work__card__meta">
                     <div class="work__card__meta__inner">
-                        <div class="work__card__author">{{ $novel->user->name }}</div>
+                        <div class="work__card__author">
+                            <img src="{{ $novel->user->avatar ? asset('storage/' . $novel->user->avatar) : asset('img/default.png') }}" class="avatar__top">
+                            {{ $novel->user->name }}
+                        </div>
                         <div class="work__card__date">{{ $novel->created_at->format('Y/m/d') }}</div>
                     </div>
 

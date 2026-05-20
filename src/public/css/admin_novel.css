@@ -26,6 +26,8 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none;
+    color: black;
 }
 
 .tab a.active {
@@ -55,12 +57,12 @@
 }
 
 
-.work__card__novel{
+.work__card__novel {
     width: 90%;
-    margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 30px auto;
+    word-break: break-word;
 }
+
 
 .work__card__meta {
     width: 90%;

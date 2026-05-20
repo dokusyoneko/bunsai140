@@ -150,18 +150,9 @@ body {
     display: none;
 }
 
-.thanks__box {
-    border: solid 1px black;
-    border-radius: 6px;
-    width: 20%;
-    height: 300px;
-    margin: 0 auto;
-    justify-items: center;
-}
 
-.thanks__button {
-    border: solid 1px black;
-}
+
+
 
 
 /* ===========================
@@ -182,12 +173,19 @@ body {
 =========================== */
 .thanks__box {
     width: 380px;
-    padding: 40px 30px;
+    min-height: 400px;
+    padding: 0px 30px;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: center;
     border: 1px solid #e5dcd0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* ← 縦方向の中央寄せ */
+    align-items: center;     /* ← 横方向の中央寄せ */
+    text-align: center;
 }
 
 /* タイトル */
@@ -203,13 +201,14 @@ body {
     font-size: 18px;
     margin-bottom: 35px;
     color: #7a6a58;
+    font-weight: bolder;
 }
 
 /* ボタン */
 .thanks__button {
     display: inline-block;
     padding: 12px 30px;
-    background-color: #d8c7b3;
+    background-color: #c3a787;
     color: #fff;
     text-decoration: none;
     border-radius: 6px;

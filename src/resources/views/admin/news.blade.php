@@ -9,6 +9,8 @@
 
 <h1 class="title">お知らせ管理</h1>
 
+
+<div class="news-wrapper">
 <section class="news-create">
 
     <h2 class="section-title">お知らせの作成</h2>
@@ -40,7 +42,9 @@
             重要なお知らせとしてマークする
         </label>
 
-        <button class="btn-submit">配信する</button>
+        <div class="submit-area">
+            <button class="btn-submit">配信する</button>
+        </div>
     </form>
 
 </section>
@@ -78,6 +82,6 @@
     @endforeach
 
 </section>
-
+</div>
 
 @endsection

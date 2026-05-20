@@ -1,3 +1,8 @@
+.news-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .title {
     text-align: center;
     margin-bottom: 30px;
@@ -5,7 +10,6 @@
 
 /* 作成フォーム全体 */
 .news-create {
-    width: 60%;
     margin: 0 auto;
     background: white;
     padding: 24px;
@@ -26,6 +30,7 @@
     margin-top: 20px;
     margin-bottom: 6px;
     font-weight: bold;
+    text-align: left;
 }
 
 /* テキスト入力 */
@@ -34,6 +39,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    box-sizing: border-box;
 }
 
 /* 本文 */
@@ -44,6 +50,7 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     resize: vertical;
+    box-sizing: border-box;
 }
 
 /* チェックボックス */
@@ -55,6 +62,12 @@
 }
 
 /* 配信ボタン */
+.submit-area {
+    display: flex;
+    justify-content: flex-end; /* ← 右寄せ */
+    margin-top: 20px;
+}
+
 .btn-submit {
     margin-top: 20px;
     background: black;
@@ -63,11 +76,11 @@
     border-radius: 6px;
     border: none;
     cursor: pointer;
+
 }
 
 /* ▼ 投稿済みお知らせ一覧 */
 .news-list {
-    width: 60%;
     margin: 40px auto 0;
 }
 
@@ -114,7 +127,9 @@
 /* 管理者用ボタン */
 .news-actions {
     display: flex;
-    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .btn-edit {
@@ -149,10 +164,14 @@
 }
 
 .news-badge {
+    display: flex;
     padding: 4px 10px;
     border-radius: 6px;
     font-size: 12px;
     color: white;
+    align-items: center;
+    height: 26px;
+    padding: 0 10px;
 }
 
 .news-badge.important {

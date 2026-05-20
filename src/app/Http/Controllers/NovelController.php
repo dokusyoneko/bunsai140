@@ -12,6 +12,7 @@ class NovelController extends Controller
     public function index(Request $request)
     {
         $tab = $request->query('tab', 'new'); // デフォルトは新着
+        $keyword = request('keyword');
 
         // 新着
         if ($tab === 'new') {
