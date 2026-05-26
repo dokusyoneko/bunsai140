@@ -11,10 +11,10 @@ class CreateNovelsTable extends Migration
         Schema::create('novels', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->text('body'); // 140字の本文
-            $table->unsignedInteger('likes')->default(0); // いいね数
+            $table->text('body');
+            $table->unsignedInteger('likes')->default(0);
             $table->boolean('draft')->default(0);
-            $table->softDeletes(); // ★ これを追加
+            $table->softDeletes();
             $table->timestamps();
         });
     }

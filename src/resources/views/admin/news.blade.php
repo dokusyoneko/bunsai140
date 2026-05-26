@@ -9,25 +9,18 @@
 
 <h1 class="title">お知らせ管理</h1>
 
-
 <div class="news-wrapper">
 <section class="news-create">
-
     <h2 class="section-title">お知らせの作成</h2>
-
     <form action="{{ route('admin.news.store') }}" method="POST">
         @csrf
-
         <label class="form-label">タイトル</label>
-        <input type="text" name="title" class="form-input"
-            placeholder="例：システムメンテナンスのお知らせ">
-
+        <input type="text" name="title" class="form-input" placeholder="例：システムメンテナンスのお知らせ">
         <div class="form__error">
             @error('title')
             {{ $message }}
             @enderror
         </div>
-
         <label class="form-label">本文</label>
         <textarea name="body" class="form-textarea"
             placeholder="お知らせの内容を入力してください…"></textarea>

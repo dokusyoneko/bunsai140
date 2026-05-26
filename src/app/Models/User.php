@@ -30,15 +30,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // ▼ 文彩のリレーション設定 ▼
-
-    // 1ユーザーは複数の小説を持つ
     public function novels()
     {
         return $this->hasMany(Novel::class);
     }
 
-    // 1ユーザーは複数の小説にいいねできる
     public function likes()
     {
         return $this->hasMany(\App\Models\Like::class);

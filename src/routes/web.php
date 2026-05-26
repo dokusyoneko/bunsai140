@@ -50,7 +50,6 @@ Route::post('/novels/{novel}/like', [LikeController::class, 'toggle'])
 });
 
 
-// 執筆を始める
 Route::middleware('auth')->group(function () {
 Route::get('/novel_create', [CreateController::class, 'create'])
 ->name('novel.create');
@@ -63,16 +62,13 @@ Route::put('/novel_update/{novel}', [CreateController::class, 'update'])
     ->name('novel.update');
 
 
-
-
-// 書斎
 Route::get('/mypage', [MypageController::class, 'index'])
     ->middleware('auth')
     ->name('mypage.index');
 Route::get('/mypage/edit', [MypageController::class, 'edit'])->name('mypage.edit');
 Route::post('/mypage/update', [MypageController::class, 'update'])->name('mypage.update');
 
-// お知らせ
+
 Route::get('/news', [NewsController::class, 'index'])
     ->name('news.index');
 
@@ -80,7 +76,7 @@ Route::get('/', function () {
     return redirect('/novel');
 });
 
-// 管理者
+
 Route::get('/admin/login', [AdminLoginController::class, 'showLoginForm'])->name('admin.login');
 Route::post('/admin/login', [AdminLoginController::class, 'login'])->name('admin.login.post');
 Route::post('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
@@ -90,11 +86,9 @@ Route::prefix('admin')
     ->group(function () {
 
         Route::get('/novel', [AdminNovelController::class, 'index']);
-        // ★ 追加：削除
         Route::post('/novel/{id}/delete', [AdminNovelController::class, 'delete'])
             ->name('admin.novel.delete');
 
-        // ★ 追加：復元
         Route::post('/novel/{id}/restore', [AdminNovelController::class, 'restore'])
             ->name('admin.novel.restore');
 
@@ -105,7 +99,6 @@ Route::prefix('admin')
         Route::get('/news', [AdminNewsController::class, 'index'])->name('admin.news.index');
         Route::post('/news/store', [AdminNewsController::class, 'store'])->name('admin.news.store');
         Route::post('/news/{id}/delete', [AdminNewsController::class, 'delete'])->name('admin.news.delete');
-
 
     });
 

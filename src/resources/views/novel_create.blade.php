@@ -7,24 +7,30 @@
 @section('content')
 <div class="main__content__inner">
     @if(isset($novel))
-    {{-- 編集モード --}}
     <form action="{{ route('novel.update', $novel->id) }}" method="POST">
         @csrf
         @method('PUT')
-@else
-    {{-- 新規投稿モード --}}
+    @else
     <form action="{{ route('novel.store') }}" method="POST">
         @csrf
-@endif
+    @endif
 
-        <div class="char-count">0/140</div>
-        <textarea class="textarea__novel" name="body"  placeholder="ここに物語を綴ってください、、、" oninput="countChars()">{{ old('body', $novel->body ?? '') }}</textarea>
+        <div class="char-count">
+            0/140
+        </div>
+        <textarea class="textarea__novel" name="body" placeholder="ここに物語を綴ってください、、、" oninput="countChars()">{{ old('body', $novel->body ?? '') }}</textarea>
         @if ($errors->has('body'))
-            <div class="error-message">{{ $errors->first('body') }}</div>
+            <div class="error-message">
+                {{ $errors->first('body') }}
+            </div>
         @endif
         <div class="novel-buttons">
-        <button type="submit" name="action" value="draft" class="novel_storage">筆を休める</button>
-        <button type="submit" name="action" value="publish" class="novel_post">投稿する</button>
+            <button type="submit" name="action" value="draft" class="novel_storage">
+                筆を休める
+            </button>
+            <button type="submit" name="action" value="publish" class="novel_post">
+                投稿する
+            </button>
         </div>
     </form>
 </div>

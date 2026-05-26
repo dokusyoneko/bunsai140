@@ -11,10 +11,9 @@ class NovelController extends Controller
 {
     public function index(Request $request)
     {
-        $tab = $request->query('tab', 'new'); // デフォルトは新着
+        $tab = $request->query('tab', 'new');
         $keyword = request('keyword');
 
-        // 新着
         if ($tab === 'new') {
             $novels = Novel::with('user')
                 ->where('draft', 0)
@@ -22,7 +21,6 @@ class NovelController extends Controller
                 ->get();
         }
 
-        // 人気（月）＝ 過去30日
         elseif ($tab === 'month') {
             $novels = Novel::with('user')
                 ->where('draft', 0)
@@ -33,7 +31,6 @@ class NovelController extends Controller
                 ->get();
         }
 
-        // 人気（全期間）
         elseif ($tab === 'all') {
             $novels = Novel::with('user')
                 ->where('draft', 0)
@@ -47,7 +44,6 @@ class NovelController extends Controller
 
     public function destroy(Novel $novel)
     {
-        // 自分の作品だけ削除可能
         if ($novel->user_id !== auth()->id()) {
             abort(403);
         }

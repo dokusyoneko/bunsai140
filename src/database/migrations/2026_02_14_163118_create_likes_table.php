@@ -13,7 +13,6 @@ class CreateLikesTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('novel_id')->constrained()->onDelete('cascade');
             $table->timestamps();
-
             $table->unique(['user_id', 'novel_id']);
         });
     }

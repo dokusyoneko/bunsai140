@@ -11,11 +11,9 @@
 </head>
 
 <body>
-    <!-- 背景 -->
     <div class="bg-left"></div>
     <div class="bg-right"></div>
 
-    <!-- ヘッダー -->
     <header class="header">
         <a href="/novel">
             <img src="{{ asset('img/headerlogo.png') }}" class="logo" alt="ヘッダーロゴ画像">
@@ -27,7 +25,6 @@
         </nav>
     </header>
 
-    <!-- メニュー -->
     <div id="menu-overlay" class="menu-overlay hidden">
         <div class="menu-box">
             <img src="{{ asset('img/icon0.png') }}" class="menu-close" id="menu-close">
@@ -81,12 +78,10 @@
         </div>
     </div>
 
-    <!-- ページごとの内容 -->
     <main class="main__contents">
         @yield('content')
     </main>
 
-    <!-- JS -->
     <script>
         const menuOverlay = document.getElementById('menu-overlay');
         const menuClose = document.getElementById('menu-close');

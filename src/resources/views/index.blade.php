@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('css')
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
 @section('content')
@@ -18,11 +18,9 @@
         <a href="{{ url('/novel?tab=new') }}">
             <button class="{{ $tab === 'new' ? 'active' : '' }}">新着</button>
         </a>
-
         <a href="{{ url('/novel?tab=month') }}">
             <button class="{{ $tab === 'month' ? 'active' : '' }}">人気（月）</button>
         </a>
-
         <a href="{{ url('/novel?tab=all') }}">
             <button class="{{ $tab === 'all' ? 'active' : '' }}">人気（全期間）</button>
         </a>
@@ -30,7 +28,7 @@
 
     <section class="works">
         @foreach ($novels as $novel)
-            <article class="work__card">
+            <div class="work__card">
                 <p class="work__card__novel">
                     {{ $novel->body }}
                 </p>
@@ -44,22 +42,21 @@
                             {{ $novel->created_at->format('Y/m/d') }}
                         </div>
                     </div>
-
                     <div class="like__area">
                         <button type="button" class="like__button" data-novel-id="{{ $novel->id }}" data-liked="{{ $novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
                             <img src="{{ $novel->isLikedBy(auth()->user()) ? asset('img/favorite2.png') : asset('img/favorite1.png') }}" class="like__icon">
                         </button>
                         <span class="like__count">{{ $novel->likes }}</span>
                         @if ($novel->user_id === auth()->id())
-                        <form action="{{ route('novels.destroy', $novel->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button class="delete-button">削除</button>
-                    </form>
-                    @endif
+                            <form action="{{ route('novels.destroy', $novel->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="delete-button">削除</button>
+                            </form>
+                        @endif
                     </div>
                 </div>
-            </article>
+            </div>
         @endforeach
     </section>
 

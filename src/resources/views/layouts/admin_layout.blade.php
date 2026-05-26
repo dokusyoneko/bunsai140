@@ -26,7 +26,6 @@
         </nav>
     </header>
 
-    <!-- メニュー -->
     <div id="menu-overlay" class="menu-overlay hidden">
         <div class="menu-box">
             <img src="{{ asset('img/icon0.png') }}" class="menu-close" id="menu-close">
@@ -65,12 +64,10 @@
         </div>
     </div>
 
-    <!-- ページごとの内容 -->
     <main class="main__contents">
         @yield('content')
     </main>
 
-    <!-- JS（一般レイアウトと同じでOK） -->
     <script>
         const menuOverlay = document.getElementById('menu-overlay');
         const menuClose = document.getElementById('menu-close');

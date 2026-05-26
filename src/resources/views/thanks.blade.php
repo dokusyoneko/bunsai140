@@ -9,7 +9,6 @@
 <body>
     <div class="bg-left"></div>
     <div class="bg-right"></div>
-
     <header class="header">
         <a href="/novel">
             <img src="{{ asset('img/headerlogo.png') }}" class="logo" alt="ヘッダーロゴ画像">
@@ -20,12 +19,9 @@
             </div>
         </nav>
     </header>
-
-    <!-- メニュー -->
     <div id="menu-overlay" class="menu-overlay hidden">
         <div class="menu-box">
             <img src="{{ asset('img/icon0.png') }}" class="menu-close" id="menu-close">
-
             <ul class="menu-list">
                 <li>
                     <a href="/novel">
