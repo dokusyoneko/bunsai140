@@ -16,7 +16,7 @@
                 @else
                     <span class="news-badge normal">お知らせ</span>
                 @endif
-                <span class="news-date">{{ $item->published_at->format('Y/m/d') }}</span>
+                <span class="news-date">{{ optional($item->published_at)->format('Y/m/d') }}</span>
             </div>
             <h3 class="news-item-title">{{ $item->title }}</h3>
             <p class="news-body">{!! nl2br(e($item->body)) !!}</p>

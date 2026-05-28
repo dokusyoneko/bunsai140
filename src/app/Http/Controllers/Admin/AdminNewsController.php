@@ -28,6 +28,7 @@ class AdminNewsController extends Controller
             'title' => $request->title,
             'body' => $request->body,
             'important' => $request->is_important ? 1 : 0,
+            'published_at' => now(),
         ]);
 
         return redirect()->back()->with('status', 'お知らせを配信しました');
