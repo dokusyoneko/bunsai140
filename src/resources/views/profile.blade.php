@@ -25,13 +25,13 @@
                 <p class="error">{{ $message }}</p>
             @enderror
         </div>
-        <div class="form-group">
+        {{--<div class="form-group">
             <label class="label">自己紹介</label>
             <textarea name="profile_message" class="textarea">{{ old('profile_message', $user->profile_message) }}</textarea>
             @error('profile_message')
                 <p class="error">{{ $message }}</p>
             @enderror
-        </div>
+        </div>--}}
         <div class="button-area">
             <a href="{{ route('mypage.index') }}" class="back-button">戻る</a>
             <button type="submit" class="save-button">保存する</button>
