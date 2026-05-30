@@ -23,10 +23,10 @@ class NewsRequest extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'タイトルを入力してください。',
-            'title.max'      => 'タイトルは30文字以内で入力してください。',
-            'body.required'  => '本文を入力してください。',
-            'body.max'      => '本文は200文字以内で入力してください。',
+            'title.required' => 'タイトルを入力してください',
+            'title.max'      => 'タイトルは30文字以内で入力してください',
+            'body.required'  => '本文を入力してください',
+            'body.max'      => '本文は200文字以内で入力してください',
         ];
     }
 

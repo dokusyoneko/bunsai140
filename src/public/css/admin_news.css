@@ -8,7 +8,6 @@
     margin-bottom: 30px;
 }
 
-/* 作成フォーム全体 */
 .news-create {
     margin: 0 auto;
     background: white;
@@ -17,14 +16,12 @@
     border: 1px solid #ddd;
 }
 
-/* セクションタイトル */
 .section-title {
     font-size: 20px;
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-/* ラベル */
 .form-label {
     display: block;
     margin-top: 20px;
@@ -33,7 +30,6 @@
     text-align: left;
 }
 
-/* テキスト入力 */
 .form-input {
     width: 100%;
     padding: 10px;
@@ -42,7 +38,6 @@
     box-sizing: border-box;
 }
 
-/* 本文 */
 .form-textarea {
     width: 100%;
     height: 150px;
@@ -53,7 +48,6 @@
     box-sizing: border-box;
 }
 
-/* チェックボックス */
 .form-checkbox {
     margin-top: 16px;
     display: flex;
@@ -61,10 +55,9 @@
     gap: 8px;
 }
 
-/* 配信ボタン */
 .submit-area {
     display: flex;
-    justify-content: flex-end; /* ← 右寄せ */
+    justify-content: flex-end;
     margin-top: 20px;
 }
 
@@ -79,7 +72,6 @@
 
 }
 
-/* ▼ 投稿済みお知らせ一覧 */
 .news-list {
     margin: 40px auto 0;
 }
@@ -93,7 +85,6 @@
     position: relative;
 }
 
-/* 重要タグ */
 .news-important {
     display: inline-block;
     background: #d9534f;
@@ -104,27 +95,23 @@
     margin-bottom: 8px;
 }
 
-/* タイトル */
 .news-title {
     font-size: 18px;
     margin: 8px 0;
     font-weight: bold;
 }
 
-/* 日付 */
 .news-date {
     font-size: 14px;
     color: #666;
     margin-bottom: 12px;
 }
 
-/* 本文 */
 .news-body {
     white-space: pre-wrap;
     margin-bottom: 16px;
 }
 
-/* 管理者用ボタン */
 .news-actions {
     display: flex;
     justify-content: flex-end;

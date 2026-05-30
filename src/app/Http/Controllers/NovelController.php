@@ -24,18 +24,24 @@ class NovelController extends Controller
         elseif ($tab === 'month') {
             $novels = Novel::with('user')
                 ->where('draft', 0)
+                ->whereYear('created_at', now()->year)
+                ->whereMonth('created_at', now()->month)
                 ->withCount(['likes' => function ($query) {
-                    $query->where('created_at', '>=', now()->subDays(30));
+                    $query->whereYear('created_at', now()->year)
+                        ->whereMonth('created_at', now()->month);
                 }])
                 ->orderBy('likes_count', 'desc')
+                ->orderBy('created_at', 'desc')
                 ->get();
         }
+
 
         elseif ($tab === 'all') {
             $novels = Novel::with('user')
                 ->where('draft', 0)
                 ->withCount('likes')
                 ->orderBy('likes_count', 'desc')
+                ->orderBy('created_at', 'desc')
                 ->get();
         }
 

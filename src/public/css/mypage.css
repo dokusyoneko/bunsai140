@@ -1,4 +1,4 @@
-/* プロフィール */
+
 .profile {
     text-align: center;
     margin-bottom: 40px;
@@ -40,7 +40,6 @@
     background-color: #837b74;
 }
 
-/* タブ */
 .tab {
     display: flex;
     gap: 16px;
@@ -63,7 +62,6 @@
     color: white;
 }
 
-/* 作品カード */
 .work__card {
     background: white;
     padding: 12px;

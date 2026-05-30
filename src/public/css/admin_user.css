@@ -42,7 +42,6 @@
     border-radius: 6px;
 }
 
-/* アイコン + 名前の横並び */
 .user__header {
     display: flex;
     align-items: center;
@@ -52,11 +51,10 @@
     margin-top: 20px;
 }
 
-/* プロフィール画像 */
 .avatar {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* 丸くする */
+    border-radius: 50%;
     object-fit: cover;
     border: 1px solid #ccc;
 }

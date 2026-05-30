@@ -10,7 +10,6 @@
 
 }
 
-/* タブ */
 .tab {
     display: flex;
     gap: 16px;
@@ -35,8 +34,6 @@
     color: white;
 }
 
-
-/* 作品カード */
 .work__card {
     background: white;
     padding: 12px;

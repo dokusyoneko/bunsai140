@@ -13,12 +13,10 @@
     color: #444;
 }
 
-/* フォーム全体 */
 .form-group {
     margin-bottom: 25px;
 }
 
-/* アイコン画像 */
 .avatar-group {
     text-align: center;
 }
@@ -39,7 +37,6 @@
     margin-top: 10px;
 }
 
-/* テキスト入力 */
 .input-text,
 .textarea {
     width: 100%;
@@ -54,14 +51,12 @@
     resize: vertical;
 }
 
-/* エラー表示 */
 .error {
     color: #d66;
     font-size: 12px;
     margin-top: 5px;
 }
 
-/* ボタン */
 .button-area {
     display: flex;
     justify-content: center;

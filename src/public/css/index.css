@@ -5,7 +5,6 @@
     z-index: 2;
 }
 
-/* リード文 */
 .lead {
     margin-top: -20px;
     margin-bottom: 50px;
@@ -18,7 +17,6 @@
     pointer-events: none;
 }
 
-/* タブ */
 .tab {
     display: flex;
     gap: 16px;
@@ -41,8 +39,6 @@
     color: white;
 }
 
-
-/* 作品カード */
 .work__card {
     background: white;
     padding: 12px;
