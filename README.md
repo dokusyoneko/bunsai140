@@ -39,6 +39,7 @@ npm run build
 - Webサーバー: Nginx 1.21.1
 
 ## ER図  
-<img width="692" height="642" alt="index_drawio" src="https://github.com/user-attachments/assets/6165958a-00c9-43ce-a62a-118273f85818" />
+<img width="692" height="612" alt="index_drawio" src="https://github.com/user-attachments/assets/e87d68dd-ca38-4027-9a52-4eb449ab6f6c" />
+
 
 
