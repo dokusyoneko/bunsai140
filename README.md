@@ -38,5 +38,6 @@ npm run build
 - コンテナ環境: Docker 28.3.2  
 - Webサーバー: Nginx 1.21.1
 
-## ER図  <img width="691" height="641" alt="index_drawio" src="https://github.com/user-attachments/assets/2e7e4bbb-7ee7-4bfa-80e3-adeb0fa1213f" />
+## ER図  
+<img width="691" height="641" alt="index_drawio" src="https://github.com/user-attachments/assets/2e7e4bbb-7ee7-4bfa-80e3-adeb0fa1213f" />
 
