@@ -15,13 +15,14 @@ docker-compose up -d --build
 (※ MySQL が起動しない場合は、各PCの環境に合わせて docker-compose.yml を編集してください。)  
 docker-compose exec php bash  
 composer install  
-composer require stripe/stripe-php  
 cp .env.example .env  
 (※環境変数を編集)  
 php artisan key:generate  
 php artisan migrate  
 php artisan db:seed  
 php artisan storage:link  
+npm install  
+npm run build  
 
 ### 権限設定について
 クローン後は `storage` と `bootstrap/cache` に書き込み権限を設定してください。   
@@ -34,7 +35,6 @@ php artisan storage:link
 - バージョン管理: GitHub  
 - コンテナ環境: Docker 28.3.2  
 - Webサーバー: Nginx 1.21.1
-- メール送信テスト: Mailhog  
-- 決済機能: Stripe (各自でテストキーを導入してください)
 
-## ER図:\\wsl.localhost\Ubuntu\home\dokusyoneko\laravel\bunsai140\src\index_drawio.png
+## ER図  <img width="691" height="641" alt="index_drawio" src="https://github.com/user-attachments/assets/2e7e4bbb-7ee7-4bfa-80e3-adeb0fa1213f" />
+
