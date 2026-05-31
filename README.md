@@ -37,7 +37,7 @@ php artisan storage:link
 - コンテナ環境: Docker 28.3.2  
 - Webサーバー: Nginx 1.21.1
 
-## 使用技術  
+## ログイン情報  
 - 一般ユーザー  
   メールアドレス：test@example.com  
   パスワード：password  
