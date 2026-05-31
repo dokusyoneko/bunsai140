@@ -68,7 +68,10 @@
                 </p>
                 <div class="work__card__meta">
                     <div class="work__card__meta__inner">
-                        <div class="work__card__author">{{ $fav->novel->user->name }}</div>
+                        <div class="work__card__author">
+                            <img src="{{ $fav->novel->user->avatar ? asset('storage/' . $fav->novel->user->avatar) : asset('img/default.png') }}" class="avatar__top">
+                            {{ $fav->novel->user->name }}
+                        </div>
                         <div class="work__card__date">{{ $fav->novel->created_at->format('Y/m/d') }}</div>
                     </div>
                     <div class="like__area">
@@ -91,6 +94,7 @@
                 <div class="work__card__meta">
                     <div class="work__card__meta__inner">
                         <div class="work__card__author">
+                            <img src="{{ $user->avatar ? asset('storage/' . $user->avatar) : asset('img/default.png') }}" class="avatar__top">
                             {{ $user->name }}
                         </div>
                         <div class="work__card__date">

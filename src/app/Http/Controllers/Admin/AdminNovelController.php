@@ -14,7 +14,8 @@ class AdminNovelController extends Controller
         $query = Novel::with(['user'])->withTrashed();
 
         if ($status === 'active') {
-            $query->whereNull('deleted_at');
+            $query->whereNull('deleted_at')
+            ->orderBy('created_at', 'desc');
         } elseif ($status === 'deleted') {
             $query->whereNotNull('deleted_at');
         }
