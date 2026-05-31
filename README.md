@@ -23,8 +23,7 @@ php artisan key:generate
 php artisan migrate  
 php artisan db:seed  
 php artisan storage:link  
-npm install  
-npm run build  
+
 
 ### 権限設定について
 クローン後は `storage` と `bootstrap/cache` に書き込み権限を設定してください。   
@@ -37,6 +36,14 @@ npm run build
 - バージョン管理: GitHub  
 - コンテナ環境: Docker 28.3.2  
 - Webサーバー: Nginx 1.21.1
+
+## 使用技術  
+- 一般ユーザー  
+  メールアドレス：test@example.com  
+  パスワード：password  
+- 管理者ユーザー  
+  メールアドレス：admin@example.com  
+  パスワード：password  
 
 ## ER図  
 <img width="692" height="612" alt="index_drawio" src="https://github.com/user-attachments/assets/e87d68dd-ca38-4027-9a52-4eb449ab6f6c" />
