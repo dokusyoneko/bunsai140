@@ -17,6 +17,4 @@ COPY src/ .
 
 RUN composer install --no-dev --optimize-autoloader
 
-RUN php artisan key:generate --force
-
 CMD ["php-fpm"]
