@@ -19,7 +19,8 @@ RUN composer install --no-dev --optimize-autoloader
 
 RUN chmod -R 777 storage bootstrap/cache
 
-CMD ["sh", "-c", "php artisan migrate --force && php artisan db:seed --force && php -S 0.0.0.0:$(echo $PORT | sed 's/[^0-9]//g') -t public"]
+CMD ["sh", "-c", "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=$(echo $PORT | sed 's/[^0-9]//g')"]
+
 
 
 
