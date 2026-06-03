@@ -64,6 +64,13 @@ body {
     cursor: pointer;
 }
 
+.menu-label {
+    font-family: HG行書体;
+    font-size: 18px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .nav__img {
     width: 150px;
     display: block;

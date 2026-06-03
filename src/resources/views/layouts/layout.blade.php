@@ -21,6 +21,12 @@
         <nav class="nav">
             <div id="menu__button" class="menu-trigger">
                 <img src="{{ asset('img/nav.png') }}" class="nav__img" alt="menu画像">
+                @guest
+                <div class="menu-label">メニュー ❘ ログイン</div>
+                @endguest
+                @auth
+                <div class="menu-label">メニュー ❘ ログアウト</div>
+                @endauth
             </div>
         </nav>
     </header>
