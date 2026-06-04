@@ -67,7 +67,7 @@
         </div>
     </main>
 
-    <!-- JS -->
+
     <script>
         const menuOverlay = document.getElementById('menu-overlay');
         const menuClose = document.getElementById('menu-close');

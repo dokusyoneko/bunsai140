@@ -94,7 +94,7 @@
                 <div class="work__card__meta">
                     <div class="work__card__meta__inner">
                         <div class="work__card__author">
-                            <img src="{{ $user->avatar ? asset('storage/' . $user->avatar) : asset('img/default.png') }}" class="avatar__top">
+                            <img src="{{ $user->avatar ? 'storage/' . $user->avatar: asset('img/default.png') }}" class="avatar__top">
                             {{ $user->name }}
                         </div>
                         <div class="work__card__date">

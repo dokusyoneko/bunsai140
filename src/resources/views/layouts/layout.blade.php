@@ -110,7 +110,7 @@
 
     </script>
 
-    <script src="{{ asset('js/like.js') }}"></script>
+    <script src="/js/like.js"></script>
 
 
 </body>
