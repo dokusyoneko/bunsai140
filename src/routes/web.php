@@ -105,6 +105,6 @@ Route::prefix('admin')
     });
 
 Route::get('/reset-db', function () {
-    Artisan::call('migrate:fresh --seed');
+    Artisan::call('migrate:fresh --seed --force');
     return 'Database has been reset!';
 });
