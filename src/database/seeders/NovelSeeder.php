@@ -33,34 +33,5 @@ class NovelSeeder extends Seeder
         ]);
 
 
-        $novel30 = Novel::create([
-            'user_id' => User::where('name', 'A太郎')->first()->id,
-            'body' => 'これは30日前に投稿された人気作品です。',
-            'likes' => 0,
-            'draft' => 0,
-            'created_at' => now()->subDays(30),
-            'updated_at' => now()->subDays(30),
-        ]);
-
-
-        $novel10 = Novel::create([
-            'user_id' => User::where('name', 'B子')->first()->id,
-            'body' => 'これは10日前に投稿された作品です。',
-            'likes' => 0,
-            'draft' => 0,
-            'created_at' => now()->subDays(10),
-            'updated_at' => now()->subDays(10),
-        ]);
-
-
-        $novel60 = Novel::create([
-            'user_id' => User::where('name', 'テストユーザー')->first()->id,
-            'body' => 'これは60日前の作品です。',
-            'likes' => 0,
-            'draft' => 0,
-            'created_at' => now()->subDays(60),
-            'updated_at' => now()->subDays(60),
-        ]);
-
     }
 }
