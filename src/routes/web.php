@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\AdminNewsController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 
+use Illuminate\Support\Facades\Artisan;
+
 
 
 /*
@@ -102,3 +104,7 @@ Route::prefix('admin')
 
     });
 
+Route::get('/reset-db', function () {
+    Artisan::call('migrate:fresh --seed');
+    return 'Database has been reset!';
+});
