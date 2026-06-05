@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Novel;
 use App\Models\User;
 use App\Http\Requests\ProfileRequest;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class MypageController extends Controller
 {
@@ -46,8 +47,12 @@ class MypageController extends Controller
         $user->profile_message = $data['profile_message'] ?? null;
 
         if ($request->hasFile('avatar')) {
-            $path = $request->file('avatar')->store('avatars', 'public');
-            $user->avatar = $path;
+            $uploadedUrl = Cloudinary::upload(
+                $request->file('avatar')->getRealPath(),
+                ['folder' => 'avatars']
+            )->getSecurePath();
+
+            $user->avatar = $uploadedUrl;
         }
 
         $user->save();

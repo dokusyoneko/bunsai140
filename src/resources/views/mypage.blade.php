@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="profile">
-        <img src="{{ $user->avatar ? asset('storage/' .$user->avatar) : asset('img/default.png') }}" class="avatar" alt="プロフィール画像">
+        <img src="{{ $user->avatar ?? asset('img/default.png') }}" class="avatar" alt="プロフィール画像">
         <div class="profile__name">{{ $user->name }}</div>
         {{--<div class="profile__message">{{ $user->profile_message ?? 'まだ自己紹介がありません' }}</div>--}}
         <a href="{{ route('mypage.edit') }}" class="profile__edit__button">
@@ -35,7 +35,7 @@
                 <div class="work__card__meta">
                     <div class="work__card__meta__inner">
                         <div class="work__card__author">
-                            <img src="{{ $novel->user->avatar ? asset('storage/' . $novel->user->avatar) : asset('img/default.png') }}" class="avatar__top">
+                            <img src="{{ $novel->user->avatar ?? asset('img/default.png') }}" class="avatar__top">
                             {{ $novel->user->name }}
                         </div>
                         <div class="work__card__date">
@@ -61,28 +61,47 @@
     @endif
 
     @if ($tab === 'favorites')
-        @foreach ($favorites as $fav)
-            <div class="work__card">
-                <p class="work__card__novel">
+    @foreach ($favorites as $fav)
+        <div class="work__card">
+            <p class="work__card__novel">
+                @if ($fav->novel)
                     {!! nl2br(e($fav->novel->body)) !!}
-                </p>
-                <div class="work__card__meta">
-                    <div class="work__card__meta__inner">
-                        <div class="work__card__author">
-                            <img src="{{ $fav->novel->user->avatar ? asset('storage/' . $fav->novel->user->avatar) : asset('img/default.png') }}" class="avatar__top">
+                @else
+                    ※ この作品は削除されています
+                @endif
+            </p>
+
+            <div class="work__card__meta">
+                <div class="work__card__meta__inner">
+                    <div class="work__card__author">
+                        @if ($fav->novel)
+                            <img src="{{ $fav->novel->user->avatar ?? asset('img/default.png') }}" class="avatar__top">
                             {{ $fav->novel->user->name }}
-                        </div>
-                        <div class="work__card__date">{{ $fav->novel->created_at->format('Y/m/d') }}</div>
+                        @else
+                            <span class="deleted"></span>
+                        @endif
                     </div>
+
+                    @if ($fav->novel)
+                        <div class="work__card__date">
+                            {{ $fav->novel->created_at->format('Y/m/d') }}
+                        </div>
+                    @endif
+                </div>
+
+                @if ($fav->novel)
                     <div class="like__area">
-                        <button type="button" class="like__button" data-novel-id="{{ $fav->novel->id }}" data-liked="{{ $fav->novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
-                            <img src="{{ $fav->novel->isLikedBy(auth()->user()) ? asset('img/favorite2.png') : asset('img/favorite1.png') }}"class="like__icon">
+                        <button type="button" class="like__button"
+                            data-novel-id="{{ $fav->novel->id }}"
+                            data-liked="{{ $fav->novel->isLikedBy(auth()->user()) ? '1' : '0' }}">
+                            <img src="{{ $fav->novel->isLikedBy(auth()->user()) ? asset('img/favorite2.png') : asset('img/favorite1.png') }}" class="like__icon">
                         </button>
                         <span class="like__count">{{ $fav->novel->likes }}</span>
                     </div>
-                </div>
+                @endif
             </div>
-        @endforeach
+        </div>
+    @endforeach
     @endif
 
     @if ($tab === 'drafts')
@@ -94,7 +113,7 @@
                 <div class="work__card__meta">
                     <div class="work__card__meta__inner">
                         <div class="work__card__author">
-                            <img src="{{ $user->avatar ? 'storage/' . $user->avatar: asset('img/default.png') }}" class="avatar__top">
+                            <img src="{{ $user->avatar ?? asset('img/default.png') }}" class="avatar__top">
                             {{ $user->name }}
                         </div>
                         <div class="work__card__date">

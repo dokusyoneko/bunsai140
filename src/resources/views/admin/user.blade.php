@@ -18,7 +18,7 @@
         <article class="user__card">
 
             <div class="user__header">
-                <img src="{{ $user->avatar ? 'storage/' .$user->avatar: asset('img/default.png') }}" class="avatar">
+                <img src="{{ $user->avatar ?? asset('img/default.png') }}" class="avatar">
                 <span class="user__name">{{ $user->name }}</span>
                 <div class="user__count">
                     投稿作品数：{{ $user->novels->count() }}

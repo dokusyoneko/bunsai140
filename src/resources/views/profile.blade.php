@@ -11,7 +11,7 @@
         @csrf
         <div class="form-group avatar-group">
             <div class="avatar-preview">
-                <img src="{{ $user->avatar ? 'storage/'.$user->avatar: asset('img/default_icon.png') }}" class="avatar-img" alt="アイコン画像">
+                <img src="{{ $user->avatar ?? asset('img/default_icon.png') }}" class="avatar-img" alt="アイコン画像">
             </div>
             <input type="file" name="avatar" class="input-file">
             @error('avatar')

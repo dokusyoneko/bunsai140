@@ -35,7 +35,7 @@
                 <div class="work__card__meta">
                     <div class="work__card__meta__inner">
                         <div class="work__card__author">
-                            <img src="{{ $novel->user->avatar ? 'storage/' . $novel->user->avatar: asset('img/default.png') }}" class="avatar">
+                            <img src="{{ $novel->user->avatar ?? asset('img/default.png') }}" class="avatar">
                             {{ $novel->user->name }}
                         </div>
                         <div class="work__card__date">
